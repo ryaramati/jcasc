@@ -8,8 +8,6 @@ jenkins:
   - list:
       columns:
       - "jobName"
-      - "lastSuccess"
-      - "lastFailure"
       - "buildButton"
       - "gitBranchSpecifierColumn"
       jobFilters:
