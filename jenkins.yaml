@@ -1,3 +1,39 @@
 jenkins:
-  systemMessage: "EWB Project update JCasC"
+  systemMessage: "EWB Project Updated JCasC"
+  updateCenter:
+    sites:
+    - id: "default"
+      url: "https://updates.jenkins.io/update-center.json"
+  views:
+  - list:
+      columns:
+      - "jobName"
+      - "lastSuccess"
+      - "lastFailure"
+      - "buildButton"
+      - "gitBranchSpecifierColumn"
+      jobFilters:
+      - buildDurationFilter:
+          amount: "0.0"
+          amountTypeString: "Hours"
+          buildCountTypeString: "Latest"
+          buildDurationMinutes: "50"
+          includeExcludeTypeString: "includeMatched"
+          lessThan: true
+      name: "EWB View"
+  viewsTabBar: "standard"
+globalCredentialsConfiguration:
+  configuration:
+    providerFilter: "none"
+    typeFilter: "none"
+security:
+  apiToken:
+    creationOfLegacyTokenEnabled: false
+    tokenGenerationOnCreationEnabled: false
+    usageStatisticsEnabled: true
+  gitHooks:
+    allowedOnAgents: false
+    allowedOnController: false
+  gitHostKeyVerificationConfiguration:
+    sshHostKeyVerificationStrategy: "knownHostsFileVerificationStrategy"
 
